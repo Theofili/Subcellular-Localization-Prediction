@@ -9,7 +9,7 @@
 
 
 import pandas as pd
-from SubCel.data.data_functions.get_data import GetData
+from data.data_functions.get_data import GetData
 import pandas as pd
 
 
@@ -34,7 +34,7 @@ full_df = pd.concat([nuclear_df, transmembrane_df, mitochondrial_df, extracellul
 
 # Save to csv
 
-full_df.to_csv('protein_data.csv') # all data with duplicates
+full_df.to_csv('data/proteins/protein_data.csv') # all data with duplicates
 
 df = full_df.copy() # Make a copy to use if needed 
 
@@ -66,7 +66,7 @@ full_df['length'] = full_df['sequence'].str.len()
 
 filtered_df = full_df[full_df['sequence'].str.len().between(64, 1218)]
 
-filtered_df.to_csv('filtered_protein_data.csv', index=False)
+filtered_df.to_csv('data/proteins/filtered_protein_data.csv', index=False)
 
 print(filtered_df.value_counts('type'))
 
@@ -105,6 +105,7 @@ def make_binary_type_df(full_df, target_type, sample_n=None, out_csv=None):
 
 
 
+os.mkdir("data/model_data")
 
 # Get 50:50 binary classification dataframes for each type -- Adjust sample sizes to number of target sequences
 ### Maybe sample number should be len(df)+len(df)/4
