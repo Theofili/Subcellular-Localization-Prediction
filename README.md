@@ -57,11 +57,12 @@ After filtering:
 |Extracellular|160|
 |Golgi|456|
 |Mitochondrial|2749|
+|Membrane|3698|
 |Nuclear|2561|
 |Peroxisome|236|
 |Reticulum|431|
 |Ribosome|164|
-|Membrane|3698|
+
 
 
 **Most important parameters:**
