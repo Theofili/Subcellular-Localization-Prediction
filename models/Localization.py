@@ -21,7 +21,7 @@ TYPES = [
     "ribosome",
 ]
 
-MODEL_DIR_TEMPLATE = ('C:/Users/theos/SubCel/SubCel/models/model_{}')
+MODEL_DIR_TEMPLATE = ('models/model_{}')
 
 # Load models and tokenizers
 
@@ -83,3 +83,4 @@ if __name__ == "__main__":
     pred_type, all_scores = predict_localization(test_seq)
     print(f"Predicted type: {pred_type}")
     print("All model scores:", all_scores) 
+
