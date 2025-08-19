@@ -218,7 +218,8 @@ def model_extracellular(df_extracellular):
 
 
 import pandas as pd
-df = pd.read_csv('C:/Users/theos/SubCel/SubCel/data/model_data/model_extracellular_data.csv')
+df = pd.read_csv('data/model_data/model_extracellular_data.csv')
 model, tokenizer, metrics = model_extracellular(df)
+
 
 
