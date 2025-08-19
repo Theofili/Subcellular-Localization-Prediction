@@ -137,9 +137,9 @@ def model_extracellular(df_extracellular):
     val_df, test_df = train_test_split(temp_df, test_size=0.5, random_state=42)
 
     # Make the paths -- NEED TO CHANGE THE FOLDER --
-    temp_train_path = "data/extracellular_temp_train.csv"
-    temp_val_path = "data/extracellular_temp_val.csv"
-    temp_test_path = "data/extracellular_temp_test.csv"
+    temp_train_path = "data/splits/extracellular_temp_train.csv"
+    temp_val_path = "data/splits/extracellular_temp_val.csv"
+    temp_test_path = "data/splits/extracellular_temp_test.csv"
 
     # Ensure the directory exists
     os.makedirs(os.path.dirname(temp_train_path), exist_ok=True)
@@ -209,7 +209,7 @@ def model_extracellular(df_extracellular):
     file_metric="results/metrics/test_results.json"
     data_expe = pd.read_json(file_metric, typ='series')
 
-    model_dir = "C:/Users/theos/SubCel/SubCel/models/model_extracellular"
+    model_dir = "models/model_extracellular"
     model_01.save_pretrained(model_dir)
     tokenizer_extracellular.save_pretrained(model_dir)
 
@@ -220,4 +220,5 @@ def model_extracellular(df_extracellular):
 import pandas as pd
 df = pd.read_csv('C:/Users/theos/SubCel/SubCel/data/model_data/model_extracellular_data.csv')
 model, tokenizer, metrics = model_extracellular(df)
+
 
