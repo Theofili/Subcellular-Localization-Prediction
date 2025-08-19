@@ -65,3 +65,4 @@ When executed this program:
 * Puts a user-inputted sequence through all models.
 * **Prints the model that yields the highest score**
 * Prints all model scores
+* If no model hits a score above 0.5, `'Not Match'` is printed
