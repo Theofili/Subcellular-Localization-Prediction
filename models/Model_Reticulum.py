@@ -137,9 +137,9 @@ def model_reticulum(df_reticulum):
     val_df, test_df = train_test_split(temp_df, test_size=0.5, random_state=42)
 
     # Make the paths -- NEED TO CHANGE THE FOLDER --
-    temp_train_path = "data/reticulum_temp_train.csv"
-    temp_val_path = "data/reticulum_temp_val.csv"
-    temp_test_path = "data/reticulum_temp_test.csv"
+    temp_train_path = "data/splits/reticulum_temp_train.csv"
+    temp_val_path = "data/splits/reticulum_temp_val.csv"
+    temp_test_path = "data/splits/reticulum_temp_test.csv"
 
     # Save the dfs into csvs
     train_df.to_csv(temp_train_path, index=False)
@@ -207,7 +207,7 @@ def model_reticulum(df_reticulum):
     file_metric="results/metrics/test_results.json"
     data_expe = pd.read_json(file_metric, typ='series')
 
-    model_dir = "C:/Users/theos/SubCel/SubCel/models/model_reticulum"
+    model_dir = "models/model_reticulum"
     model_01.save_pretrained(model_dir)
     tokenizer_reticulum.save_pretrained(model_dir)
 
@@ -216,6 +216,7 @@ def model_reticulum(df_reticulum):
 
 
 import pandas as pd
-df = pd.read_csv('C:/Users/theos/SubCel/SubCel/data/model_data/model_reticulum_data.csv')
+df = pd.read_csv('data/model_data/model_reticulum_data.csv')
 model, tokenizer, metrics = model_reticulum(df)
+
 
