@@ -31,6 +31,7 @@ peroxisome_df = GetData.get_data(db="protein", title='peroxisome', size=10000, o
 
 full_df = pd.concat([nuclear_df, transmembrane_df, mitochondrial_df, extracellular_df, golgi_df, reticulum_df, ribosome_df, lysosome_df, peroxisome_df], ignore_index=True) 
 
+full_df['length'] = full_df['sequence'].str.len()
 
 # Save to csv
 
@@ -60,7 +61,6 @@ print(f'The lower bound of the sequence lengths is: {lower}')
 print(f'The upper bound of the sequence lengths is: {upper}')
 
 
-full_df['length'] = full_df['sequence'].str.len()
 
 # Filter the sequences based on upper and lower bounds
 
@@ -119,5 +119,6 @@ model_reticulum_df = make_binary_type_df(filtered_df, target_type='reticulum', s
 model_ribosome_df = make_binary_type_df(filtered_df, target_type='ribosome', sample_n=200, out_csv='model_ribosome_data.csv')
 model_lysosome_df = make_binary_type_df(filtered_df, target_type='lysosome', sample_n=5000, out_csv='model_lysosome_data.csv')
 model_peroxisome_df = make_binary_type_df(filtered_df, target_type='peroxisome', sample_n=300, out_csv='model_peroxisome_data.csv')
+
 
 
