@@ -48,6 +48,16 @@ When executed these programms:
 * Saves results each epoch.
 * Saves the model in each own folder.
 
+Each program needs to run individually and beacause of different training dataset sizes, some models perform better than others.
+
+**Most important parameters:**
+* Learning rate: 2e-5
+* Number of epochs: 20
+* Max length: 1000
+* Early stopping patience: 3
+
+Some other paramters can be changed for the model to train faster, in better performing hardware (batch_size, number of epochs, bf16)
+
 *Lysosome dataframe did not have sufficient amount of sequences, therefore there is no model.*
 
 ### 2.2 `Localization.py`
