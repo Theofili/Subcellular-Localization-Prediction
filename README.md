@@ -44,7 +44,7 @@ All dataframes created are saved as csv's, as well as saved fasta files from Ent
 When executed these programms:
 * Initializes training parameters.
 * Splits coresponding dataframe into training(80%), validation(10%), testing(10%) sets. *Saved as csv's*
-* Trains the `RaphaelMourad/Mistral-Peptide-v1-15M` model on the dataset.
+* Trains the `RaphaelMourad/Mistral-Peptide-v1-15M` model on the datasets.
 * Saves results each epoch.
 * Saves the model in each own folder.
 
