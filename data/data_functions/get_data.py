@@ -47,7 +47,7 @@ class GetData(object):
 
     # Load and save fasta into a txt
     
-    os.chdir('C:/Users/theos/SubCel/SubCel/data')
+    os.chdir('data/fastas')
 
     with open(''+output+'.txt', 'w') as f:
         f.write(res.read())
@@ -65,6 +65,7 @@ class GetData(object):
     df['type'] = title
     
     return(df)
+
 
 
   
