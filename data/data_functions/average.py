@@ -26,7 +26,7 @@ res = Entrez.efetch(db='protein', id=id_list, rettype='fasta', retmode='text')
 
 # Load and save fasta into a txt
 
-os.chdir('C:/Users/theos/SubCel/SubCel/data')
+os.chdir('data/fastas')
 
 with open('average_length.txt', 'w') as f:
     f.write(res.read())
@@ -42,7 +42,7 @@ with open('average_length.txt') as fp:
 # Turn the dict into a dataframe/csv
 
 df = pd.DataFrame.from_dict(data)
-df.to_csv('all_proteins.csv')
+df.to_csv('data/proteins/all_proteins.csv')
 
 
 # Drop duplicated sequences
@@ -58,7 +58,7 @@ for sequnece in df.iterrows():
 
 # Save non-duplicates and length dataframe
 
-df.to_csv('filtered_proteins.csv', index=False)
+df.to_csv('data/proteins/filtered_proteins.csv', index=False)
 
 
 longest_seq = df['sequence'].str.len().max()
@@ -81,4 +81,5 @@ upper = df['length'].quantile(0.95)
 
 print(f'The lower bound of the sequence lengths is: {lower}')
 print(f'The upper bound of the sequence lengths is: {upper}')
+
 
