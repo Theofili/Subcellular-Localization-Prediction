@@ -50,6 +50,20 @@ When executed these programms:
 
 Each program needs to run individually and beacause of different training dataset sizes, some models perform better than others.
 
+After filtering:
+
+|Type|Sequences Count|
+|-----|-------------|
+|Extracellular|160|
+|Golgi|456|
+|Mitochondrial|2749|
+|Nuclear|2561|
+|Peroxisome|236|
+|Reticulum|431|
+|Ribosome|164|
+|Membrane|3698|
+
+
 **Most important parameters:**
 * Learning rate: 2e-5
 * Number of epochs: 20
