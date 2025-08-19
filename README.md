@@ -8,7 +8,7 @@ This markdown contains the full workflow of creating a function which predicts t
 
 ## In the `data/data_functions` folder run:
 
-### 1.1. average.py
+### 1.1. `average.py`
 When executed this program:
 * Collects **human protein sequences** from the Entrez-protein database. 
 * Calculates the lengths of the sequences.
@@ -17,7 +17,7 @@ When executed this program:
 
 These numbers are used to filter out extremely short or long protein sequences, because they are often biological artifacts (fragments, chimeras, or annotation errors) and don’t represent typical proteins. From a computational side, very short or long sequences create inefficiencies in batching, increase memory cost, and can destabilize training. By restricting lengths to a reasonable range, the model focuses on biologically meaningful proteins and trains more efficiently.
 
-### 1.2 model_dataframes.py
+### 1.2 `model_dataframes.py`
 When executed this program:
 * Creates dataframes with proteins pulled from Entrez which have a *particular word* in title. In this case it is cell locations(nuclear, membrane, mitochondrial, etc.)
 * Filters through duplicates and sequence lengths based on the average length.
@@ -37,7 +37,7 @@ All dataframes created are saved as csv's, as well as saved fasta files from Ent
 
 ## In the `models folder` run:
 
-### 2.1 Model_{cellular_location}.py
+### 2.1 `Model_{cellular_location}.py`
 
 When executed these programms:
 * Initializes training parameters.
@@ -48,7 +48,7 @@ When executed these programms:
 
 *Lysosome dataframe did not have sufficient amount of sequences, therefore there is no model.*
 
-### 2.2 Localization.py
+### 2.2 `Localization.py`
 When executed this program:
 * Puts a user inputed sequence through all models.
 * **Prints the model that yields the highest score**
