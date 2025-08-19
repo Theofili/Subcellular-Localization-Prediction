@@ -50,6 +50,6 @@ When executed these programms:
 
 ### 2.2 `Localization.py`
 When executed this program:
-* Puts a user inputed sequence through all models.
+* Puts a user-inputted sequence through all models.
 * **Prints the model that yields the highest score**
 * Prints all model scores
