@@ -17,6 +17,8 @@ When executed this program:
 
 These numbers are used to filter out extremely short or long protein sequences, because they are often biological artifacts (fragments, chimeras, or annotation errors) and don’t represent typical proteins. From a computational side, very short or long sequences create inefficiencies in batching, increase memory cost, and can destabilize training. By restricting lengths to a reasonable range, the model focuses on biologically meaningful proteins and trains more efficiently.
 
+*Average length is calculated on proteins from human and not from the ones used to train - if trained data is used upper bound is higher due to in general longer extracellular protein sequences. Don't know which bounds should be used.*
+
 ### 1.2 `model_dataframes.py`
 When executed this program:
 * Creates dataframes with proteins pulled from Entrez which have a *particular word* in title. In this case it is cell locations(nuclear, membrane, mitochondrial, etc.)
