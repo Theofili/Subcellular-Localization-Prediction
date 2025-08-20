@@ -9,6 +9,9 @@ This markdown contains the full workflow of creating a function which predicts t
 ## In the `data/data_functions` folder run:
 
 ### 1.1. `average.py`
+
+**First input a working directory** -- all files after that will be saved into distinct folders
+
 When executed this program:
 * Collects **human protein sequences** from the Entrez-protein database. 
 * Calculates the lengths of the sequences.
