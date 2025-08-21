@@ -4,6 +4,14 @@
 
 This markdown contains the full workflow of creating a function which predicts the location of user inputed proteins.
 
+# 0. Download Packages
+
+To get all packages needed, type:
+
+```
+pip install -r requirments.txt
+```
+
 # 1. Collecting Data
 
 ## In the `data/data_functions` folder run:
