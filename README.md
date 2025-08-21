@@ -4,7 +4,7 @@
 
 This markdown contains the full workflow of creating a function which predicts the location of user inputed proteins.
 
-# 0. Download Packages
+# 0. Install Packages
 
 To get all packages needed, type:
 
