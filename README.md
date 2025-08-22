@@ -8,7 +8,7 @@ This markdown contains the full workflow of creating a function which predicts t
 
 To get all packages needed, type:
 
-```
+```ruby
 pip install -r requirments.txt
 ```
 
