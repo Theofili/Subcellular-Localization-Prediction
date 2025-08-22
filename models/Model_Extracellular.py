@@ -92,7 +92,7 @@ def model_extracellular(df_extracellular):
         per_device_eval_batch_size=16,
         num_train_epochs=20,
         weight_decay=0.1,
-        bf16=False, #FALSE IN GPU PERFORMS BETTER???
+        bf16=True, #FALSE IN GPU PERFORMS BETTER???
         report_to="none",
         load_best_model_at_end = True,
     )
@@ -220,6 +220,7 @@ def model_extracellular(df_extracellular):
 import pandas as pd
 df = pd.read_csv('data/model_data/model_extracellular_data.csv')
 model, tokenizer, metrics = model_extracellular(df)
+
 
 
 
