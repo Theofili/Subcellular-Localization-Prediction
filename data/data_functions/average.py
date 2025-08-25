@@ -12,6 +12,7 @@ from collections import defaultdict
 import pandas as pd
 import statistics
 
+
 # Pull protein sequences from human genome
 
 handle = Entrez.esearch(db = 'protein', term='Homo sapiens[ORGN]', retmax=9999)
@@ -26,7 +27,8 @@ res = Entrez.efetch(db='protein', id=id_list, rettype='fasta', retmode='text')
 
 # Load and save fasta into a txt
 
-os.chdir('data/fastas')
+os.mkdir("../fastas")
+os.chdir("../fastas")
 
 with open('average_length.txt', 'w') as f:
     f.write(res.read())
@@ -41,6 +43,7 @@ with open('average_length.txt') as fp:
 
 # Turn the dict into a dataframe/csv
 
+os.mkdir("../proteins")
 df = pd.DataFrame.from_dict(data)
 df.to_csv('data/proteins/all_proteins.csv')
 
@@ -81,6 +84,7 @@ upper = df['length'].quantile(0.95)
 
 print(f'The lower bound of the sequence lengths is: {lower}')
 print(f'The upper bound of the sequence lengths is: {upper}')
+
 
 
 
