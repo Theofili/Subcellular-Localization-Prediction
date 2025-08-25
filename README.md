@@ -28,6 +28,7 @@ Create folders:
 ```ruby
 cd data
 mkdir fastas, proteins, splits, model_data
+cd ..
 ```
 
 # 1. Collecting Data
