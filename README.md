@@ -23,6 +23,12 @@ conda activate SLP
 pip install -r requirments.txt
 ```
 
+Create folders: 
+```ruby
+cd data
+mkdit fastas, proteins, splits, model_data
+```
+
 # 1. Collecting Data
 
 ## In the `data/data_functions` folder run:
