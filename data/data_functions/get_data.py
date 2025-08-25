@@ -17,6 +17,8 @@ import io
 import os
 from collections import defaultdict
 
+cwd = os.getcwd()
+
 ## Function to fetch sequences from differend dbs and differente title characteristics
 
 class GetData(object):
@@ -46,8 +48,10 @@ class GetData(object):
     res = Entrez.efetch(db=db, id=id_list, rettype='fasta', retmode='text')
 
     # Load and save fasta into a txt
+	
+    os.chdir(cwd)
+    os.chdir('data/fastas')
     
-    os.chdir('../fastas')
 
     with open(''+output+'.txt', 'w') as f:
         f.write(res.read())
@@ -65,8 +69,3 @@ class GetData(object):
     df['type'] = title
     
     return(df)
-
-
-
-  
-
