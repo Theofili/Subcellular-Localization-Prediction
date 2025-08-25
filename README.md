@@ -4,11 +4,19 @@
 
 This markdown contains the full workflow of creating a function which predicts the location of user inputed proteins.
 
-# 0. Install Packages
+# 0. Installations
 
-To get all packages needed, type:
+Download repository:
+```ruby
+git clone https://github.com/Theofili/Subcellular-Localization-Prediction
+```
+Create a conda enviroment:
+
+*All files created are saved in current directory*
 
 ```ruby
+conda create --name SLP python==3.12.1
+conda activate SLP
 pip install -r requirments.txt
 ```
 
