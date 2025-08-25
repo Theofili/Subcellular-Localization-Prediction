@@ -1,5 +1,12 @@
 
 
+### Code taken from Mistral Model
+
+###--------------------------------------------------------------------------------------------------------------------------------------------------##									
+                                                   ### Code taken from Mistral Model ###
+# &copy Mourad, R. (2024). Mistral-Peptide-v1-15M [Machine learning model]. Hugging Face. https://huggingface.co/RaphaelMourad/Mistral-Peptide-v1-15M #
+###--------------------------------------------------------------------------------------------------------------------------------------------------##
+
 import os
 import csv
 import copy
@@ -215,6 +222,7 @@ def predictionAccuracyMetrics(yobs,ypred,mode):
 		metrics=pd.DataFrame({'R':[R], 'R_isotonic':[Riso]})        
 			
 	return metrics
+
 
 
 
