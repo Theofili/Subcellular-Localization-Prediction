@@ -27,7 +27,7 @@ pip install -r requirments.txt
 Create folders: 
 ```ruby
 cd data
-mkdit fastas, proteins, splits, model_data
+mkdir fastas, proteins, splits, model_data
 ```
 
 # 1. Collecting Data
