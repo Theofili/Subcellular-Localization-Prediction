@@ -28,7 +28,7 @@ res = Entrez.efetch(db='protein', id=id_list, rettype='fasta', retmode='text')
 # Load and save fasta into a txt
 
 
-os.chdir("../fastas")
+os.chdir('../fastas')
 
 with open('average_length.txt', 'w') as f:
     f.write(res.read())
@@ -84,6 +84,7 @@ upper = df['length'].quantile(0.95)
 
 print(f'The lower bound of the sequence lengths is: {lower}')
 print(f'The upper bound of the sequence lengths is: {upper}')
+
 
 
 
