@@ -11,12 +11,6 @@ from Bio import SeqIO
 from collections import defaultdict
 import pandas as pd
 import statistics
-from define_direcotry import directory
-
-## Navigate to desired folder -- All files after that will be saved into distinct folders
-
-os.chdir('%s'% directory())
-
 
 # Pull protein sequences from human genome
 
@@ -87,6 +81,7 @@ upper = df['length'].quantile(0.95)
 
 print(f'The lower bound of the sequence lengths is: {lower}')
 print(f'The upper bound of the sequence lengths is: {upper}')
+
 
 
 
