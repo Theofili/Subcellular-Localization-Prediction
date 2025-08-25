@@ -35,7 +35,7 @@ full_df['length'] = full_df['sequence'].str.len()
 
 # Save to csv
 
-full_df.to_csv('../proteins/protein_data.csv') # all data with duplicates
+full_df.to_csv('data/proteins/protein_data.csv') # all data with duplicates
 
 df = full_df.copy() # Make a copy to use if needed 
 
@@ -66,7 +66,7 @@ print(f'The upper bound of the sequence lengths is: {upper}')
 
 filtered_df = full_df[full_df['sequence'].str.len().between(76, 1218)]
 
-filtered_df.to_csv('../proteins/filtered_protein_data.csv', index=False)
+filtered_df.to_csv('data/proteins/filtered_protein_data.csv', index=False)
 
 print(filtered_df.value_counts('type'))
 
@@ -105,7 +105,7 @@ def make_binary_type_df(full_df, target_type, sample_n=None, out_csv=None):
 
 
 
-os.chdir("../model_data")
+os.chdir("data/model_data")
 
 # Get 50:50 binary classification dataframes for each type -- Adjust sample sizes to number of target sequences
 ### Maybe sample number should be len(df)+len(df)/4
@@ -119,6 +119,7 @@ model_reticulum_df = make_binary_type_df(filtered_df, target_type='reticulum', s
 model_ribosome_df = make_binary_type_df(filtered_df, target_type='ribosome', sample_n=200, out_csv='model_ribosome_data.csv')
 model_lysosome_df = make_binary_type_df(filtered_df, target_type='lysosome', sample_n=5000, out_csv='model_lysosome_data.csv')
 model_peroxisome_df = make_binary_type_df(filtered_df, target_type='peroxisome', sample_n=300, out_csv='model_peroxisome_data.csv')
+
 
 
 
