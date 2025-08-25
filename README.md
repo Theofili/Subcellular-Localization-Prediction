@@ -98,6 +98,8 @@ Each program needs to run individually and beacause of different training datase
 
 After filtering:
 
+*Relevant to each entrez search*
+
 |Type|Sequences Count|
 |-----|-------------|
 |Extracellular|160|
