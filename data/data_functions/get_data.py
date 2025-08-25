@@ -47,7 +47,7 @@ class GetData(object):
 
     # Load and save fasta into a txt
     
-    os.chdir('data/fastas')
+    os.chdir('../fastas')
 
     with open(''+output+'.txt', 'w') as f:
         f.write(res.read())
@@ -69,3 +69,4 @@ class GetData(object):
 
 
   
+
