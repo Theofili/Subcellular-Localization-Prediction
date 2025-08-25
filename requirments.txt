@@ -1,14 +1,14 @@
 ## Python version 3.12.1
 
-transformers>=4.37.0
-numpy>=1.24.4
-pandas>=1.4.4
-scikit-learn>=1.0
+transformers==4.55.0
+numpy==2.3.2
+pandas==2.3.1
+scikit-learn==1.7.1
 datasets>=2.14.4
-peft>=0.7.2
-accelerate>=0.21.0
-bitsandbytes>=0.37.0
+peft==0.17.0
+accelerate==1.9.0
+bitsandbytes==0.46.1
 progressbar==2.5
-tensorboard
-torch-xla>=2.0
-biopython
+tensorboard==2.20.0
+torch==2.8.0+cpu
+biopython==1.85
