@@ -21,7 +21,11 @@ Create a conda enviroment:
 conda create --name SLP python==3.12.1
 conda activate SLP
 cd Subcellular-Localization-Prediction
-pip install -r requirments.txt
+```
+
+Install required packages:
+```ruby
+pip install -r requirements.txt
 ```
 
 Create folders: 
