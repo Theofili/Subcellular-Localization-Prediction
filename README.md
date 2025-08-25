@@ -20,6 +20,7 @@ Create a conda enviroment:
 ```ruby
 conda create --name SLP python==3.12.1
 conda activate SLP
+cd Subcellular-Localization-Prediction
 pip install -r requirments.txt
 ```
 
