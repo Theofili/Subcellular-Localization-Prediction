@@ -7,6 +7,9 @@ This markdown contains the full workflow of creating a function which predicts t
 # 0. Installations
 
 Download repository:
+
+*First navigate on directory you want the repository to be saved*
+
 ```ruby
 git clone https://github.com/Theofili/Subcellular-Localization-Prediction
 ```
@@ -26,6 +29,10 @@ pip install -r requirments.txt
 
 ### 1.1. `average.py`
 
+```ruby
+python data/data_functions/average.py
+```
+
 **First input a working directory** -- all files after that will be saved into distinct folders
 
 When executed this program:
@@ -39,6 +46,9 @@ These numbers are used to filter out extremely short or long protein sequences, 
 *Average length is calculated on proteins from human and not only from the ones used to train - if trained data is used upper bound is higher due to in general longer extracellular protein sequences. Don't know which bounds should be used.*
 
 ### 1.2 `model_dataframes.py`
+```ruby
+python data/data_functions/madel_dataframes.py
+```
 When executed this program:
 * Creates dataframes with proteins pulled from Entrez which have a *particular word* in title. In this case it is cell locations(nuclear, membrane, mitochondrial, etc.)
 * Filters through duplicates and sequence lengths based on the average length.
@@ -59,6 +69,11 @@ All dataframes created are saved as csv's, as well as saved fasta files from Ent
 ## In the `models folder` run:
 
 ### 2.1 `Model_{cellular_location}.py`
+
+```ruby
+python models/Model_Nuclear.py
+```
+**This command will be repeated changing the cellular location. Model names are (Reticulum, Extracellular, Golgi, Membrane, Mitochondria, Nuclear, Peroxisome, Ribosome)**
 
 When executed these programms:
 * Initializes training parameters.
@@ -95,6 +110,11 @@ Some other paramters can be changed for the model to train faster, in better per
 *Lysosome dataframe did not have sufficient amount of sequences, therefore there is no model.*
 
 ### 2.2 `Localization.py`
+```ruby
+python models/Localization.py
+```
+**There is already a sequence for testing written in the programm. Can be changed by editing code.**
+
 When executed this program:
 * Puts a user-inputted sequence through all models.
 * **Prints the model that yields the highest score**
