@@ -55,7 +55,7 @@ These numbers are used to filter out extremely short or long protein sequences, 
 
 ### 1.2 `model_dataframes.py`
 ```ruby
-python data/data_functions/madel_dataframes.py
+python data/data_functions/model_dataframes.py
 ```
 When executed this program:
 * Creates dataframes with proteins pulled from Entrez which have a *particular word* in title. In this case it is cell locations(nuclear, membrane, mitochondrial, etc.)
