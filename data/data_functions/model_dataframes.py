@@ -118,12 +118,13 @@ os.chdir("data/model_data")
 model_extracellular_df = make_binary_type_df(filtered_df, target_type='extracellular', sample_n =200, out_csv='model_extracellular_data.csv')
 model_membrane_df = make_binary_type_df(filtered_df, target_type='transmembrane', sample_n=5000, out_csv='model_membrane_data.csv')
 model_nuclear_df = make_binary_type_df(filtered_df, target_type='nuclear', sample_n=3000, out_csv='model_nuclear_data.csv')
-model_mitochondrial_df = make_binary_type_df(filtered_df, target_type='mitochondrial', sample_n=3000, out_csv='model_mitochondrial_data.csv')
+model_mitochondrial_df = make_binary_type_df(filtered_df, target_type='mitochondrial', sample_n=3000, out_csv='model_mitochondria_data.csv')
 model_golgi_df = make_binary_type_df(filtered_df, target_type='golgi', sample_n=500, out_csv='model_golgi_data.csv')
 model_reticulum_df = make_binary_type_df(filtered_df, target_type='reticulum', sample_n=500, out_csv='model_reticulum_data.csv')
 model_ribosome_df = make_binary_type_df(filtered_df, target_type='ribosome', sample_n=200, out_csv='model_ribosome_data.csv')
 model_lysosome_df = make_binary_type_df(filtered_df, target_type='lysosome', sample_n=5000, out_csv='model_lysosome_data.csv')
 model_peroxisome_df = make_binary_type_df(filtered_df, target_type='peroxisome', sample_n=300, out_csv='model_peroxisome_data.csv')
+
 
 
 
