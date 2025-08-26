@@ -198,13 +198,15 @@ def model_membrane(df_membrane):
     print('Done')
 
 
-    results_path = training_args.output_dir+"/metrics"
-    results = trainer.evaluate(eval_dataset=test_dataset)
+    results_path = os.path.join(training_args.output_dir, "metrics")
     os.makedirs(results_path, exist_ok=True)
+
+    results = trainer.evaluate(eval_dataset=test_dataset)
     with open(os.path.join(results_path, "test_results.json"), "w") as f:
         json.dump(results, f)
 
-    file_metric="results/metrics/test_results.json"
+    # Load metrics back into pandas
+    file_metric = os.path.join(results_path, "test_results.json")
     data_expe = pd.read_json(file_metric, typ='series')
 
     model_dir = "models/model_membrane"
@@ -218,6 +220,7 @@ def model_membrane(df_membrane):
 import pandas as pd
 df = pd.read_csv('data/model_data/model_membrane_data.csv')
 model, tokenizer, metrics = model_membrane(df)
+
 
 
 
