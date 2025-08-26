@@ -11,4 +11,4 @@ bitsandbytes==0.46.1
 progressbar2
 tensorboard
 biopython
-torch==2.8.0
+torch>=2.8.0
