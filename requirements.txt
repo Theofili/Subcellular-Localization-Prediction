@@ -1,14 +1,14 @@
 ## Python version 3.12.1
 
-numpy
-tensorboard
-torch
-biopython
-scikit-learn
-pandas
-transformers
-datasets
-bitsandbytes 
-peft 
-accelerate
-progressbar
+numpy==2.3.2
+tensorboard==2.20.0
+torch==2.8.0
+biopython==1.85
+scikit-learn==1.7.1
+pandas==2.3.2
+transformers==4.55.4
+datasets==4.0.0
+bitsandbytes==0.47.0
+peft==0.17.1
+accelerate==1.10.0
+progressbar==2.5
