@@ -8,7 +8,8 @@ datasets>=2.14.4
 peft==0.17.0
 accelerate
 bitsandbytes==0.46.1
-progressbar2==3.61.0
-tensorboard==2.20.2
+progressbar2
+tensorboard
 torch==2.8.0
 biopython
+
