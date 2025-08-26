@@ -7,6 +7,13 @@ def model_reticulum(df_reticulum):
 
     ## Import libraries
 
+    import sys 
+
+    if sys.argv[1].lower() == 'true':
+        acc = True
+    else:
+        acc = False
+
     # Load basic modules
     import os
     import sys
@@ -220,6 +227,7 @@ def model_reticulum(df_reticulum):
 import pandas as pd
 df = pd.read_csv('data/model_data/model_reticulum_data.csv')
 model, tokenizer, metrics = model_reticulum(df)
+
 
 
 
