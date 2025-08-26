@@ -3,9 +3,14 @@ import pandas as pd
 
 def model_membrane(df_membrane):
 
-    
-
     ## Import libraries
+
+    import sys 
+
+    if sys.argv[1].lower() == 'true':
+        acc = True
+    else:
+        acc = False
 
     # Load basic modules
     import os
@@ -220,6 +225,7 @@ def model_membrane(df_membrane):
 import pandas as pd
 df = pd.read_csv('data/model_data/model_membrane_data.csv')
 model, tokenizer, metrics = model_membrane(df)
+
 
 
 
