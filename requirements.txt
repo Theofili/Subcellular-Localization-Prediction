@@ -10,6 +10,5 @@ accelerate
 bitsandbytes==0.46.1
 progressbar2
 tensorboard
-torch==2.8.0
 biopython
-
+torch==2.8.0
