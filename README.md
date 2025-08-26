@@ -135,7 +135,7 @@ Some other paramters can be changed for the model to train faster, in better per
 ```ruby
 python models/Localization.py
 ```
-**There is already a sequence for testing written in the programm. Can be changed by editing code.**
+#### **User will be asked to provide a protein sequence for classification**
 
 When executed this program:
 * Puts a user-inputted sequence through all models.
