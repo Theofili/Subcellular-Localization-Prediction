@@ -12,3 +12,4 @@ bitsandbytes==0.47.0
 peft==0.17.1
 accelerate==1.10.0
 progressbar==2.5
+torch-xla==2.8.0
