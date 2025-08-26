@@ -3,7 +3,12 @@ import pandas as pd
 
 def model_golgi(df_golgi):
 
-    
+    import sys 
+
+    if sys.argv[1].lower() == 'true':
+        acc = True
+    else:
+        acc = False
 
     ## Import libraries
 
@@ -219,6 +224,7 @@ def model_golgi(df_golgi):
 import pandas as pd
 df = pd.read_csv('data/model_data/model_golgi_data.csv')
 model, tokenizer, metrics = model_golgi(df)
+
 
 
 
