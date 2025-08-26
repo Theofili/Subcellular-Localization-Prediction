@@ -3,6 +3,12 @@ import pandas as pd
 
 def model_extracellular(df_extracellular):
 
+    import sys 
+
+    if sys.argv[1].lower() == 'true':
+        acc = True
+    else:
+        acc = False
     
 
     ## Import libraries
@@ -222,6 +228,7 @@ def model_extracellular(df_extracellular):
 import pandas as pd
 df = pd.read_csv('data/model_data/model_extracellular_data.csv')
 model, tokenizer, metrics = model_extracellular(df)
+
 
 
 
