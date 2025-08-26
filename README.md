@@ -83,8 +83,17 @@ All dataframes created are saved as csv's, as well as saved fasta files from Ent
 ### 2.1 `Model_{cellular_location}.py`
 
 ```ruby
-python models/Model_Nuclear.py
+python models/Model_Nuclear.py --acc
 ```
+
+* #### -acc (True, False)
+
+This argument determines whether bfloat will be enabled, use `True` or `False`(default).
+
+bfloat16 is used to speed up training and reduce memory usage, but is not compatible with all computers.
+
+If you get and error `your setup doesn't support bf16/gpu`, or an `accelarator error` set argument as False.
+
 **This command will be repeated changing the cellular location. Model names are (Reticulum, Extracellular, Golgi, Membrane, Mitochondria, Nuclear, Peroxisome, Ribosome)**
 
 When executed these programms:
