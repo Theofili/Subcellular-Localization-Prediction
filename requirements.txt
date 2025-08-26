@@ -11,4 +11,4 @@ bitsandbytes==0.46.1
 progressbar2==3.61.0
 tensorboard==2.20.2
 torch==2.8.0
-biopython==1.85
+biopython
