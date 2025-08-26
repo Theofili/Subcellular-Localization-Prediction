@@ -3,9 +3,14 @@ import pandas as pd
 
 def model_nuclear(df_nuclear):
 
-    
-
     ## Import libraries
+
+    import sys 
+
+    if sys.argv[1].lower() == 'true':
+        acc = True
+    else:
+        acc = False
 
     # Load basic modules
     import os
@@ -220,6 +225,7 @@ def model_nuclear(df_nuclear):
 import pandas as pd
 df = pd.read_csv('data/model_data/model_nuclear_data.csv')
 model, tokenizer, metrics = model_nuclear(df)
+
 
 
 
