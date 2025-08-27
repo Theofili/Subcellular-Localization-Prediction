@@ -15,8 +15,6 @@ git clone https://github.com/Theofili/Subcellular-Localization-Prediction
 ```
 Create a conda enviroment:
 
-*All files created are saved in current directory*
-
 ```ruby
 conda create --name SLP python==3.12.1
 conda activate SLP
@@ -45,17 +43,15 @@ cd ..
 python data/data_functions/average.py
 ```
 
-**First input a working directory** -- all files after that will be saved into distinct folders
-
 When executed this program:
 * Collects **human protein sequences** from the Entrez-protein database. 
 * Calculates the lengths of the sequences.
-* Prints statistics like mean, sd and distribution of lengths.
+* Prints statistics like mean, sd and distribution of sequence lengths.
 * Prints **lower (5%) and upper (95%) bound** for sequence lengths.
 
 These numbers are used to filter out extremely short or long protein sequences, because they are often biological artifacts (fragments, chimeras, or annotation errors) and don’t represent typical proteins. From a computational side, very short or long sequences create inefficiencies in batching, increase memory cost, and can destabilize training. By restricting lengths to a reasonable range, the model focuses on biologically meaningful proteins and trains more efficiently.
 
-*Average length is calculated on proteins from human and not only from the ones used to train - if trained data is used upper bound is higher due to in general longer extracellular protein sequences. Don't know which bounds should be used.*
+*Average length is calculated on proteins from human and not only from the ones used to train - if trained data is used upper bound is higher due to in general longer extracellular protein sequences. ~~Don't know which bounds should be used.~~*
 
 ### 1.2 `model_dataframes.py`
 ```ruby
@@ -63,13 +59,15 @@ python data/data_functions/model_dataframes.py
 ```
 When executed this program:
 * Creates dataframes with proteins pulled from Entrez which have a *particular word* in title. In this case it is cell locations(nuclear, membrane, mitochondrial, etc.)
-* Filters through duplicates and sequence lengths based on the average length.
+* Filters through duplicates and sequence lengths based on the average length computed in the previous program.
 * **Creates 50:50 binary classification dataframes for each cell location** -- Adjust sample sizes to number of target sequences
 * Dataframes saved in `data/model_data` folder (naming = `model_{cell_location}_data.csv`)
 
 Each cell location contains different numbers of sequences, and for that reason total number of sequences differ. Each dataframe contains a `sequence` column and a `type` column. When `type==1` sequence exist in the location written in the title of the dataframe, when `type==0` sequence exists in any other location in the cell.
 
 ***Doesn't use** user input, collects data from 9 cellular locations (Reticulum, Extracellular, Golgi, Membrane, Mitochondria, Nuclear, Peroxisome, Reticulum, Ribosome)*
+
+> **_NOTE:_**  When runnning 1.1 and 1.2, might come accross `HTTP Error 500: Internal Server Error` due to network problems or NCBI busy servers. Try again in a few minutes.
 
 ---
 
@@ -88,7 +86,7 @@ python models/Model_Nuclear.py --acc
 ----
 * ### `-acc (True, False)`
 
-This argument determines whether bfloat will be enabled, use `True` or `False`(default).
+This argument determines whether bfloat will be enabled, use `True` or `False`*(default)*.
 
 bfloat16 is used to speed up training and reduce memory usage, but is not compatible with all computers.
 
@@ -147,13 +145,17 @@ When executed this program:
 
 ### Output expamle:
 ```ruby
-(SLP) C:\Users\Subcellular-Localization-Prediction>python models/Localization.py
+## Example 2.2 execution
+# Models were trained on very few data, for output example purposes.
+# Peroxisome and Reticulum models were not trained or used in the localization function.
+
+(SLP) ~\Subcellular-Localization-Prediction>python models/Localization.py
 Please provide protein sequence: MAALRRLLWPPPRVSPPLCAHQPLLGPWGRPAVTTLGLPGRPFSSREDEERAVAEAAWRRRRRWGELSVAAAAGGGLVGLVCYQLYGDPRAGSPATGRPSKSAATEPEDPPRGRGMLPIPVAAAKETVAIGRTDIEDLDLYATSRERRFRLFASIECEGQLFMTPYDFILAVTTDEPKVAKTWKSLSKQELNQMLAETPPVWKGSSKLFRNLKEKEPHAGFRIAFNMFDTDGNEMVDKKEFLVLQEIFRKKNEKREIKGDEEKRAMLRLQLYGYHSPTNSVLKTDAEELVSRSYWDTLRRNTSQALFSDLAERADDITSLVTDTTLLVHFFGKKGKAELNFEDFYRFMDNLQTEVLEIEFLSYSNGMNTISEEDFAHILLRYTNVENTSVFLENVRYSIPEEKGITFDEFRSFFQFLNNLEDFAIALNMYNFASRSIGQDEFKRAVYVATGLKFSPHLVNTVFKIFDVDKDDQLSYKEFIGIMKDRLHRGFRGYKTVQKYPTFKSCLKKELHSR
 
 Predicted type: mitochondria
 All model scores: {'extracellular': 0.410167396068573, 'golgi': 0.38762950897216797, 'membrane': 0.3010360598564148, 'mitochondria': 0.6791390776634216, 'nuclear': 0.2867254316806793, 'ribosome': 0.44316619634628296}
 
-(SLP) C:\Users\Subcellular-Localization-Prediction>python models/Localization.py
+(SLP) ~\Subcellular-Localization-Prediction>python models/Localization.py
 Please provide protein sequence: GSHMESADLRALAKHLYDSYIKSFPLTKAKARAILTGKTTDKSPFVIYDMNSLMMGEDKIKFKHITPLQEQSKEVAIRIFQGCQFRSVEAVQEITEYAKSIPGFVNLDLNDQVTLLKYGVHEIIYTMLASLMNKDGVLISEGQGFMTREFLKSLRKPFGDFMEPKFEFAVKFNALELDDSDLAIFIAVIILSGDRPGLLNVKPIEDIQDNLLQALELQLKLNHPESSQLFAKLLQKMTDLRQIVTEHVQLLQVIKKTETDMSLHPLLQEIYKDLY
 
 Predicted type: Not Matched
